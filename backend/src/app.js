@@ -14,8 +14,9 @@ app.get("/home",(req,res)=>{
 })
 
 app.use(cors({
-    origin:"*",
-    credentials:true
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST"],
+  credentials: true
 }));
 
 app.use(express.json({limit:"40kb"}));
