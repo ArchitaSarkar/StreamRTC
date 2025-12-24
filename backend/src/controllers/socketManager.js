@@ -15,7 +15,7 @@ const connectToSocket = (server) => {
     });     
     io.on("connection", (socket) => {  
         socket.on("join-call",(path)=>{
-           if(!connections[path]==undefined){
+           if(connections[path]===undefined){
             connections[path]=[];
            }
            connections[path].push(socket.id);
@@ -33,7 +33,7 @@ const connectToSocket = (server) => {
         socket.on("chat-message",(data,sender)=>{
              const [matchingRoom,found]=Object.entries(connections)
              .reduce(([room,isFound],[roomKey,roomValue])=>{
-                  if(isFound && roomValue.includes(socket.id)){
+                  if(!isFound && roomValue.includes(socket.id)){
                     return [roomKey,true];
                   }
                     return [room,isFound];
@@ -49,7 +49,7 @@ const connectToSocket = (server) => {
              }
         })          
         socket.on("disconnect", () => {
-            var diffTime=Math.abs(timeOnline[socket.id]-new Date());
+            const diffTime = Date.now() - timeOnline[socket.id];
             var key
             for(const [k,v] of JSON.parse(JSON.stringify(Object.entries(connections)))){
                for(let a=0;a<v.length;++a){
