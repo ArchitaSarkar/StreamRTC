@@ -24,4 +24,4 @@ app.use(express.urlencoded({limit:"40kb",extended:true}));
 
 app.use("/api/v1/users",routes);
 
-export { app };
+export { app, server };

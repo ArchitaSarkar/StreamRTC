@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
 
-const Auth = () => {
+const Authentication = () => {
   const [isRegister, setIsRegister] = useState(false);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -83,4 +83,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default Authentication;
