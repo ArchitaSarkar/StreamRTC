@@ -1,0 +1,119 @@
+Markdown
+
+# StreamRTC - Video Conferencing Application
+
+StreamRTC is a real-time video conferencing application built with the MERN stack (MongoDB, Express, React, Node.js) and WebRTC. It allows users to create meetings, join via unique links, chat in real-time, and share screens.
+
+## 🚀 Features
+
+* **Real-time Video & Audio:** High-quality video and audio calls using WebRTC.
+* **Instant Meetings:** Create a meeting and share the URL to invite others.
+* **Chat System:** Integrated real-time chat during video calls.
+* **Screen Sharing:** Share your screen with other participants.
+* **Media Controls:** Toggle audio and video on/off during calls.
+* **Authentication:** User registration and login system.
+* **Responsive Design:** Built with Material UI for a modern look.
+
+## 🛠️ Tech Stack
+
+### Frontend
+* **React.js:** UI Library
+* **Material UI (MUI):** Component library for styling
+* **Socket.io-client:** For real-time signaling
+* **React Router:** Navigation
+
+### Backend
+* **Node.js & Express:** Server runtime and framework
+* **Socket.io:** Real-time bidirectional event-based communication
+* **MongoDB & Mongoose:** Database and ODM
+* **Bcrypt & JWT:** Authentication and security
+
+## ⚙️ Installation & Setup
+
+Follow these steps to get the project running locally.
+
+### Prerequisites
+* Node.js installed
+* MongoDB installed and running locally (or a MongoDB Atlas URI)
+
+### 1. Backend Setup
+
+Navigate to the backend directory:
+```bash
+cd backend
+Install dependencies:
+
+Bash
+
+npm install
+Create a .env file in the backend folder and add the following variables:
+
+Code snippet
+
+PORT=8000
+MONGO_URI=your_mongodb_connection_string
+# Add any other JWT secrets or config keys used in your user controller
+Start the backend server:
+
+Bash
+
+npm run dev
+The server will typically run on http://localhost:8000 (or the port you specified).
+
+2. Frontend Setup
+Open a new terminal and navigate to the frontend directory:
+
+Bash
+
+cd frontend
+Install dependencies:
+
+Bash
+
+npm install
+Start the React application:
+
+Bash
+
+npm start
+The app will open at http://localhost:3000.
+
+📖 Usage
+Register/Login: Create an account or log in to access the dashboard.
+
+Start a Meeting: Click to start a new meeting. You will be redirected to a meeting room.
+
+Invite Others: Copy the URL from your browser (e.g., http://localhost:3000/random-string) and send it to others.
+
+Join a Meeting: Paste the meeting link into your browser to join.
+
+Controls:
+
+Click the Camera icon to toggle video.
+
+Click the Mic icon to toggle audio.
+
+Click the Screen Share icon to share your screen.
+
+Click the Chat icon to open the message panel.
+
+📂 Project Structure
+root
+├── backend/            # Node.js/Express Server
+│   ├── src/
+│   │   ├── controllers/ # Logic for sockets and users
+│   │   ├── models/      # Mongoose schemas
+│   │   ├── routes/      # API routes
+│   │   └── index.js     # Entry point
+│   └── ...
+└── frontend/           # React Client
+    ├── src/
+    │   ├── pages/       # Views (Auth, Landing, VideoMeet)
+    │   ├── styles/      # CSS modules
+    │   └── App.js       # Main component
+    └── ...
+🤝 Contributing
+Contributions are welcome! Please fork the repository and create a pull request for any feature enhancements or bug fixes.
+
+📄 License
+This project is licensed under the ISC License.
