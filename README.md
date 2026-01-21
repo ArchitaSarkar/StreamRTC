@@ -1,4 +1,3 @@
-Markdown
 
 # StreamRTC - Video Conferencing Application
 
